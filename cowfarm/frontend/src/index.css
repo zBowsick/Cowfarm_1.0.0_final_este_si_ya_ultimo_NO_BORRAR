@@ -1,0 +1,9 @@
+/* Reset mínimo; el resto del estilo viene de src/styles/*.css (copiados
+   del sitio original) que cada página importa según necesite. */
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+}

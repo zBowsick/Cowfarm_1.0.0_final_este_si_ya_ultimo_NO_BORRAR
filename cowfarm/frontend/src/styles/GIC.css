@@ -1,0 +1,719 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+/* ---------------------------------------------------------------
+   TAMAÑO DE LETRA
+   La escala se aplica sobre <html> porque casi todo el sitio mide en
+   `rem`, y `rem` depende de <html>, no de <body>. Antes se cambiaba
+   el font-size de <body> y por eso los botones A+ / A- no hacían nada.
+--------------------------------------------------------------- */
+:root {
+    --font-scale: 1;
+    --base-font-size: 16px;
+}
+
+html {
+    /* 100% = el tamaño que el usuario tenga configurado en su navegador */
+    font-size: calc(100% * var(--font-scale, 1));
+    transition: font-size 0.2s ease;
+}
+
+body {
+    font-size: 1rem;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 5%;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+/* =========================
+   Navbar
+========================= */
+.logo {
+    width: 140px;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: white;
+}
+
+.navigation .btnlogin-popup {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #359381;
+    font-weight: 500;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navigation .btnlogin-popup:hover {
+    color: white;
+}
+/* =========================
+   PARALAX
+========================= */
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+#text, #leaf, #hill1, #hill4, #hill5 {
+    will-change: transform;
+    /* Asegura que los elementos no afecten el flujo del documento y causen saltos */
+    position: absolute; 
+}
+#text{
+    position: absolute;
+    font-size: clamp(2rem, 8vw, 5rem);
+    color: #fff;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.2);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.parallax img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.sec{
+    position: relative;
+    background: #003329;
+    padding: 80px 8%;
+}
+
+.sec h2{
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sec p{
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px){
+
+    header{
+        padding: 20px 4%;
+    }
+
+    .navigation{
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        left: 0;
+    }
+
+    .sec{
+        padding: 70px 6%;
+    }
+}
+
+@media (max-width: 768px){
+
+    header{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo{
+        margin-bottom: 15px;
+    }
+
+    .navigation{
+        justify-content: center;
+        gap: 8px;
+        left: 0;
+        top: 0;
+    }
+
+    .navigation a{
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .navigation .btnlogin-popup{
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .parallax{
+        height: 90vh;
+    }
+
+    #text{
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .sec{
+        padding: 50px 6%;
+    }
+
+    .sec h2{
+        text-align: center;
+    }
+
+    .sec p{
+        text-align: justify;
+    }
+}
+
+@media (max-width: 480px){
+
+    .navigation{
+        flex-direction: column;
+    }
+
+    .navigation a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation .btnlogin-popup{
+        width: 100%;
+    }
+
+    #text{
+        padding: 0 10px;
+    }
+
+    .sec{
+        padding: 40px 5%;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background: #01221b;
+
+    color: white;
+
+    padding: 70px 8% 20px;
+}
+
+/* CONTENEDOR */
+
+.footer-container{
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    flex-wrap: wrap;
+}
+
+/* MARCA */
+
+.footer-brand{
+    flex: 1;
+
+    min-width: 250px;
+}
+
+.footer-logo{
+    width: 140px;
+
+    margin-bottom: 20px;
+
+    filter: drop-shadow(
+        0 0 12px rgba(255,255,255,0.25)
+    );
+}
+
+.footer-brand p{
+    color: #cfcfcf;
+
+    line-height: 1.8;
+
+    max-width: 350px;
+}
+
+/* LINKS */
+
+.footer-links{
+    flex: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.footer-column{
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 180px;
+}
+
+.footer-column h3{
+    margin-bottom: 20px;
+
+    font-size: 1.1rem;
+
+    color: white;
+}
+
+.footer-column a{
+    text-decoration: none;
+
+    color: #cfcfcf;
+
+    margin-bottom: 12px;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover{
+    color: #359381;
+
+    transform: translateX(5px);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    text-align: center;
+}
+
+.footer-bottom p{
+    color: #a5a5a5;
+
+    font-size: 0.9rem;
+}
+
+
+/* ===============================================================
+   MODO CLARO / OSCURO
+   ---------------------------------------------------------------
+   Los selectores llevan el prefijo `html` a propósito: las hojas de
+   cada página (public/styles/*.css) se cargan DESPUÉS de esta, así
+   que con la misma especificidad ganarían ellas. Con `html` delante
+   esta hoja tiene prioridad y el tema queda consistente en todo el
+   sitio.
+=============================================================== */
+
+html:root {
+    --bg-color: #ffffff;
+    --text-color: #01221b;      /* antes era #ffffff: texto blanco sobre fondo blanco */
+    --superficie: #ffffff;      /* tarjetas, formularios, paneles */
+    --superficie-2: #f4f7f6;    /* fondo de página */
+    --borde: #e7eeec;
+    --texto-suave: #5b6f6a;
+    --verde: #359381;
+    --verde-claro: #eef7f4;
+}
+
+html body.dark-mode {
+    --bg-color: #06201a;
+    --text-color: #e6f4f1;      /* antes era #000000: texto negro sobre fondo negro */
+    --superficie: #0e2e27;
+    --superficie-2: #06201a;
+    --borde: #2c5b51;
+    --texto-suave: #a9c6bf;
+    --verde: #7fd3c0;
+    --verde-claro: #134036;
+}
+
+html body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* --- Logo e iconos del interruptor --- */
+html .logo {
+    width: 140px;
+    max-width: 100%;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+html .logo.logo-dark { display: none; }
+html body.dark-mode .logo.logo-light { display: none; }
+html body.dark-mode .logo.logo-dark { display: block; }
+
+html .btn-toggle .moon { display: none; }
+html .btn-toggle .sun { display: inline; }
+html body.dark-mode .btn-toggle .moon { display: inline; }
+html body.dark-mode .btn-toggle .sun { display: none; }
+
+/* ===============================================================
+   PANEL DE ACCESIBILIDAD (tamaño de letra + tema)
+   Antes el interruptor de tema estaba en `position: fixed; top: -20px`,
+   o sea casi fuera de la pantalla. Ahora los cuatro controles viven
+   juntos en un solo panel flotante.
+=============================================================== */
+html .font-controls {
+    position: fixed;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    z-index: 1000;
+
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 6px;
+    width: auto;
+
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #dbe8e4;
+    border-right: none;
+    border-radius: 12px 0 0 12px;
+    padding: 10px 8px;
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12);
+    backdrop-filter: blur(6px);
+}
+
+html body.dark-mode .font-controls {
+    background: rgba(14, 46, 39, 0.95);
+    border-color: #2c5b51;
+}
+
+html .font-controls .fc-btn {
+    /* Tamaño fijo: los propios controles no deben crecer al agrandar la letra */
+    font-size: 14px !important;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    line-height: 1;
+    width: 38px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: 1px solid #359381;
+    border-radius: 8px;
+    background: #ffffff;
+    color: #359381;
+    padding: 0;
+    transition: background 0.2s ease, color 0.2s ease, opacity 0.2s ease;
+}
+
+html .font-controls .fc-btn:hover:not(:disabled) {
+    background: #359381;
+    color: #ffffff;
+}
+
+html .font-controls .fc-btn:disabled {
+    opacity: 0.4;
+    cursor: not-allowed;
+}
+
+html .font-controls .fc-btn:focus-visible {
+    outline: 2px solid #01221b;
+    outline-offset: 2px;
+}
+
+html body.dark-mode .font-controls .fc-btn {
+    background: transparent;
+    color: #7fd3c0;
+    border-color: #7fd3c0;
+}
+
+html body.dark-mode .font-controls .fc-btn:hover:not(:disabled) {
+    background: #7fd3c0;
+    color: #06201a;
+}
+
+html .font-controls .fc-nivel {
+    font-size: 11px !important;
+    font-weight: 600;
+    text-align: center;
+    color: #5b6f6a;
+    font-family: 'Poppins', sans-serif;
+}
+
+html body.dark-mode .font-controls .fc-nivel {
+    color: #a9c6bf;
+}
+
+/* El interruptor de tema, dentro del mismo panel */
+html .font-controls .btn-toggle {
+    position: static;
+    transform: none;
+    font-size: 15px !important;
+    border-radius: 8px;
+    margin-top: 2px;
+}
+
+@media (max-width: 600px) {
+    html .font-controls {
+        top: auto;
+        bottom: 14px;
+        right: 14px;
+        transform: none;
+        flex-direction: row;
+        align-items: center;
+        border-radius: 999px;
+        border-right: 1px solid #dbe8e4;
+        padding: 8px 10px;
+    }
+
+    html body.dark-mode .font-controls {
+        border-right-color: #2c5b51;
+    }
+
+    html .font-controls .fc-nivel {
+        min-width: 34px;
+    }
+}
+
+/* ===============================================================
+   MODO OSCURO APLICADO A LAS PÁGINAS
+   Antes el modo oscuro solo pintaba el <body> de negro, pero todas las
+   tarjetas y formularios seguían blancos con texto oscuro (o peor:
+   texto negro sobre negro). Aquí se cubren los componentes reales.
+=============================================================== */
+
+/* --- Encabezado --- */
+html body.dark-mode header {
+    background: rgba(6, 32, 26, 0.92);
+}
+
+html body.dark-mode .navigation a {
+    color: #7fd3c0;
+}
+
+html body.dark-mode .navigation a:hover,
+html body.dark-mode .navigation a.active {
+    background: #359381;
+    color: #ffffff;
+}
+
+html body.dark-mode .navigation .btnlogin-popup {
+    color: #7fd3c0;
+}
+
+/* --- Superficies genéricas: tarjetas, formularios, paneles --- */
+html body.dark-mode .publicar-form,
+html body.dark-mode .publicar-lista-panel,
+html body.dark-mode .producto-card,
+html body.dark-mode .servicio-card,
+html body.dark-mode .contacto-form,
+html body.dark-mode .info-item,
+html body.dark-mode .kpi-card,
+html body.dark-mode .admin-panel,
+html body.dark-mode .admin-section,
+html body.dark-mode .admin-table-wrap,
+html body.dark-mode .admin-modal,
+html body.dark-mode .modal-box,
+html body.dark-mode .chart-container,
+html body.dark-mode .usuarios-lista {
+    background: var(--superficie);
+    border-color: var(--borde);
+    color: var(--text-color);
+    box-shadow: 0 1px 12px rgba(0, 0, 0, 0.35);
+}
+
+html body.dark-mode .publicar-wrapper,
+html body.dark-mode .admin-wrapper,
+html body.dark-mode .productos-section,
+html body.dark-mode .servicios-section,
+html body.dark-mode .contacto-section {
+    color: var(--text-color);
+}
+
+/* Títulos y textos que estaban fijados en verde oscuro */
+html body.dark-mode .publicar-header h1,
+html body.dark-mode .admin-header h1,
+html body.dark-mode .admin-section h2,
+html body.dark-mode .admin-panel h2,
+html body.dark-mode .kpi-card .kpi-valor,
+html body.dark-mode .producto-body h3,
+html body.dark-mode .modal-box h2,
+html body.dark-mode .admin-modal h3,
+html body.dark-mode .servicio-card h3,
+html body.dark-mode .publicar-lista-panel h2,
+html body.dark-mode .item-nombre,
+html body.dark-mode .item-precio {
+    color: #e6f4f1;
+}
+
+html body.dark-mode .publicar-header p,
+html body.dark-mode .admin-section-sub,
+html body.dark-mode .producto-descripcion,
+html body.dark-mode .item-meta,
+html body.dark-mode .estado-vacio,
+html body.dark-mode .estado-carga,
+html body.dark-mode .admin-vacio,
+html body.dark-mode .servicio-card p,
+html body.dark-mode .publicar-aviso {
+    color: var(--texto-suave);
+}
+
+/* --- Campos de formulario --- */
+html body.dark-mode .publicar-form input,
+html body.dark-mode .publicar-form select,
+html body.dark-mode .publicar-form textarea,
+html body.dark-mode .contacto-form input,
+html body.dark-mode .contacto-form textarea,
+html body.dark-mode .modal-box input,
+html body.dark-mode .modal-box select,
+html body.dark-mode .modal-box textarea,
+html body.dark-mode .admin-modal input,
+html body.dark-mode .admin-modal select,
+html body.dark-mode .admin-modal textarea,
+html body.dark-mode .admin-toolbar input,
+html body.dark-mode .admin-toolbar select,
+html body.dark-mode .admin-form-inline input,
+html body.dark-mode .admin-form-categoria input,
+html body.dark-mode .admin-table input,
+html body.dark-mode .admin-table select {
+    background: #123a31;
+    color: #e6f4f1;
+    border: 1px solid var(--borde);
+}
+
+html body.dark-mode input::placeholder,
+html body.dark-mode textarea::placeholder {
+    color: #7f9c95;
+}
+
+html body.dark-mode .publicar-form label,
+html body.dark-mode .admin-modal label,
+html body.dark-mode .campo label,
+html body.dark-mode .modal-box label {
+    color: #cfe5e0;
+}
+
+/* --- Tablas del panel de administración --- */
+html body.dark-mode .admin-table th {
+    background: #123a31;
+    color: #e6f4f1;
+    border-color: var(--borde);
+}
+
+html body.dark-mode .admin-table td {
+    color: var(--text-color);
+    border-color: var(--borde);
+}
+
+html body.dark-mode .admin-table tr:hover td {
+    background: #123a31;
+}
+
+/* --- Pestañas y botones --- */
+html body.dark-mode .admin-tab-btn {
+    color: var(--texto-suave);
+}
+
+html body.dark-mode .admin-tab-btn.active {
+    color: #7fd3c0;
+    border-bottom-color: #7fd3c0;
+}
+
+html body.dark-mode .btn-admin-secundario {
+    background: transparent;
+    color: #7fd3c0;
+    border-color: #7fd3c0;
+}
+
+/* --- Ventanas modales --- */
+html body.dark-mode .modal-overlay,
+html body.dark-mode .admin-modal-overlay {
+    background: rgba(0, 0, 0, 0.7);
+}
+
+html body.dark-mode .modal-cerrar {
+    color: #e6f4f1;
+}
+
+/* --- Login --- */
+html body.dark-mode .form-container,
+html body.dark-mode .sign-in,
+html body.dark-mode .sign-up {
+    background: var(--superficie);
+    color: var(--text-color);
+}
+
+html body.dark-mode .form-container input {
+    background: #123a31;
+    color: #e6f4f1;
+}
+
+html body.dark-mode .form-container h1,
+html body.dark-mode .form-container h2 {
+    color: #e6f4f1;
+}
+
+/* ===============================================================
+   BOTONES DE LOGIN SOCIAL (Google / Facebook) EN MODO OSCURO
+=============================================================== */
+html body.dark-mode .social-icons a,
+html body.dark-mode .social-icons .icon,
+html body.dark-mode .social-icons button.icon {
+    border-color: #2c5b51;
+    color: #e6f4f1;
+}

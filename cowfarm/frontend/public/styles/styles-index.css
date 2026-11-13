@@ -1,0 +1,539 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+body{
+    background-image: url(/images/fondo2.png);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 20px;
+}
+
+header{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+
+    padding: 20px 5%;
+    z-index: 100;
+
+    flex-wrap: wrap;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 5%;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+
+.logo {
+    width: 140px;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: white;
+}
+
+.navigation .btnlogin-popup {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #ffffff;
+    font-weight: 500;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navigation .btnlogin-popup:hover {
+    color: white;
+}
+
+.container{
+    background-color: #fff;
+    border-radius: 30px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.35);
+    position: relative;
+    top: 60px;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 620px;
+}
+
+.container p{
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span{
+    font-size: 12px;
+}
+
+.container a{
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container button{
+    background-color: #359381;
+    color: #fff;
+    font-size: 12px;
+    padding: 10px 45px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+}
+
+.container button.hidden{
+    background-color: transparent;
+    border-color: #fff;
+}
+
+.container form{
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 30px 40px;
+    height: 100%;
+    overflow-y: auto;
+}
+
+.container input{
+    background-color: #eee;
+    border: none;
+    margin: 6px 0;
+    padding: 9px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.sign-up h1{
+    margin-bottom: 4px;
+}
+
+.sign-up .social-icons{
+    margin: 10px 0;
+}
+
+.sign-up span{
+    margin-bottom: 4px;
+}
+
+.form-container{
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+.form-container select{
+    background-color: #eee;
+    border: none;
+    margin: 6px 0;
+    padding: 9px 15px;
+    font-size: 13px;
+    border-radius: 8px;
+    width: 100%;
+    outline: none;
+}
+
+.form-message{
+    font-size: 12px;
+    margin: 4px 0;
+    min-height: 14px;
+}
+
+.form-message.error{
+    color: #d93025;
+}
+
+.form-message.success{
+    color: #188038;
+}
+
+.sign-in{
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in{
+    transform: translateX(100%);
+}
+
+.sign-up{
+    left: 0;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up{
+    transform: translateX(100%);
+    opacity: 1;
+    z-index: 5;
+    animation: move 0.6s;
+}
+
+@keyframes move{
+    0%, 49.99%{
+        opacity: 0;
+        z-index: 1;
+    }
+
+    50%, 100%{
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+.social-icons{
+    margin: 20px 0;
+    display: flex;
+    align-items: center;
+}
+
+.social-icons a,
+.social-icons .icon,
+.social-icons button.icon{
+    border: 1px solid #ccc;
+    border-radius: 20%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 3px;
+    width: 40px;
+    height: 40px;
+    background: transparent;
+    padding: 0;
+    cursor: pointer;
+    color: #333;
+    font-size: 1rem;
+    overflow: hidden;
+}
+
+.social-icons button.icon:disabled{
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.social-icons .icon-deshabilitado{
+    opacity: 0.45;
+    cursor: not-allowed;
+}
+
+/* El botón real de Google (dibujado por su propio SDK dentro de un iframe)
+   se recorta al mismo círculo de 40px que usan los demás íconos. */
+.icon-google-boton{
+    width: 40px;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: scale(1.08); /* el SDK deja un pequeño margen interno */
+}
+
+.icon-google-boton iframe{
+    border-radius: 50% !important;
+}
+
+.toggle-container{
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.container.active .toggle-container{
+    transform: translateX(-100%);
+    border-radius: 0 150px 100px 0;
+}
+
+.toggle{
+    background-color: #359381;
+    background: linear-gradient(to right, #235347, #163832);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toggle{
+    transform: translateX(50%);
+}
+
+.toggle-panel{
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toggle-left{
+    transform: translateX(-200%);
+}
+
+.container.active .toggle-left{
+    transform: translateX(0);
+}
+
+.toggle-right{
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toggle-right{
+    transform: translateX(200%);
+}
+
+@media (max-width: 992px){
+
+    .navigation{
+        justify-content: center;
+        width: 100%;
+        margin-top: 10px;
+    }
+
+    .container{
+        width: 95%;
+        min-height: 500px;
+    }
+}
+
+@media (max-width: 768px){
+
+    body{
+        padding-top: 120px;
+    }
+
+    header{
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .navigation{
+        top: 0;
+        left: 0;
+        justify-content: center;
+    }
+
+    .container{
+        min-height: 800px;
+    }
+
+    .form-container{
+        width: 100%;
+        height: 50%;
+    }
+
+    .sign-in{
+        width: 100%;
+        height: 50%;
+    }
+
+    .sign-up{
+        width: 100%;
+        height: 50%;
+    }
+
+    .container.active .sign-in{
+        transform: translateY(100%);
+    }
+
+    .container.active .sign-up{
+        transform: translateY(100%);
+    }
+
+    .toggle-container{
+        left: 0;
+        top: 50%;
+        width: 100%;
+        height: 50%;
+        border-radius: 30px 30px 0 0;
+    }
+
+    .container.active .toggle-container{
+        transform: translateY(-100%);
+        border-radius: 0 0 30px 30px;
+    }
+
+    .toggle{
+        left: 0;
+        top: -100%;
+        width: 100%;
+        height: 200%;
+    }
+
+    .container.active .toggle{
+        transform: translateY(50%);
+    }
+
+    .toggle-panel{
+        width: 100%;
+        height: 50%;
+    }
+
+    .toggle-left{
+        top: 0;
+        transform: translateY(-200%);
+    }
+
+    .container.active .toggle-left{
+        transform: translateY(0);
+    }
+
+    .toggle-right{
+        bottom: 0;
+        transform: translateY(0);
+    }
+
+    .container.active .toggle-right{
+        transform: translateY(200%);
+    }
+}
+
+@media (max-width: 480px){
+
+    .container{
+        border-radius: 20px;
+    }
+
+    .container form{
+        padding: 0 20px;
+    }
+
+    .container button{
+        width: 100%;
+        padding: 12px;
+    }
+
+    .navigation a{
+        font-size: 14px;
+        padding: 6px 12px;
+    }
+
+    .logo{
+        width: 110px;
+    }
+} 
+
+/* --- Tu CSS original --- */
+
+/* Lógica de Modo Oscuro */
+:root { --bg-color: #f9f9f9; --text-color: #333; }
+body.dark-mode { background-image: url(/images/fondo-negativo.png); --text-color: #e6f4f1; }
+
+body { 
+    background-color: var(--bg-color); 
+    color: var(--text-color); 
+    transition: background-color 0.3s, color 0.3s; 
+}
+
+/* Manejo de Logos */
+.logo.logo-dark { display: none; }
+body.dark-mode .logo.logo-light { display: none; }
+body.dark-mode .logo.logo-dark { display: block; }
+
+/* Botón Toggle */
+.btn-toggle { cursor: pointer; text-decoration: none; font-size: 20px; }
+.btn-toggle .moon { display: none; }
+.btn-toggle .sun { display: inline; }
+body.dark-mode .btn-toggle .moon { display: inline; }
+body.dark-mode .btn-toggle .sun { display: none; }
+
+.btn-toggle {
+    cursor: pointer;
+    background: #757575;
+    border: 2px solid #757575;
+    padding: 8px 15px;
+    border-radius: 10px 0px 0px 0px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #359381;
+}
+
+.btn-toggle {
+    position: fixed;
+    top: -20px;
+    right: -8px; 
+    transform: translateY(-50%); 
+    z-index: 1000; 
+}

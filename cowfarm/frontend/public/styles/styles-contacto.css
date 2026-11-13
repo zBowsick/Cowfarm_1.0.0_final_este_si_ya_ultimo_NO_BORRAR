@@ -1,0 +1,515 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background: #f9f9f9;
+    overflow-x: hidden;
+}
+
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    padding: 20px 5%;
+    z-index: 100;
+    flex-wrap: wrap;
+}
+/* =========================
+   Navbar
+========================= */
+.logo {
+    width: 140px;
+    max-width: 100%;
+    pointer-events: none;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.navigation a {
+    text-decoration: none;
+    color: #359381;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.navigation a:hover,
+.navigation a.active {
+    background: #359381;
+    color: white;
+}
+
+.navigation .btnlogin-popup {
+    background: transparent;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 1rem;
+    color: #359381;
+    font-weight: 500;
+    transition: 0.3s;
+    font-family: 'Poppins', sans-serif;
+}
+
+.navigation .btnlogin-popup:hover {
+    color: white;
+}
+/* =========================
+   PARALAX
+========================= */
+.parallax{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+}
+#text, #leaf, #hill1, #hill4, #hill5 {
+    will-change: transform;
+    /* Asegura que los elementos no afecten el flujo del documento y causen saltos */
+    position: absolute; 
+}
+#text{
+    position: absolute;
+    font-size: clamp(2rem, 8vw, 5rem);
+    color: #fff;
+    text-shadow: 4px 4px 4px rgba(0,0,0,.2);
+    text-align: center;
+    padding: 0 20px;
+}
+
+.parallax img{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    pointer-events: none;
+}
+
+.sec{
+    position: relative;
+    background: #003329;
+    padding: 80px 8%;
+}
+
+.sec h2{
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+.sec p{
+    font-size: clamp(0.9rem, 2vw, 1rem);
+    color: #ffffff;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@media (max-width: 1024px){
+
+    header{
+        padding: 20px 4%;
+    }
+
+    .navigation{
+        justify-content: center;
+        width: 100%;
+        margin-top: 15px;
+        left: 0;
+    }
+
+    .sec{
+        padding: 70px 6%;
+    }
+}
+
+@media (max-width: 768px){
+
+    header{
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .logo{
+        margin-bottom: 15px;
+    }
+
+    .navigation{
+        justify-content: center;
+        gap: 8px;
+        left: 0;
+        top: 0;
+    }
+
+    .navigation a{
+        padding: 6px 12px;
+        font-size: 0.9rem;
+    }
+
+    .navigation .btnlogin-popup{
+        font-size: 0.9rem;
+        padding: 6px 12px;
+    }
+
+    .parallax{
+        height: 90vh;
+    }
+
+    #text{
+        font-size: clamp(2rem, 10vw, 3rem);
+    }
+
+    .sec{
+        padding: 50px 6%;
+    }
+
+    .sec h2{
+        text-align: center;
+    }
+
+    .sec p{
+        text-align: justify;
+    }
+}
+
+@media (max-width: 480px){
+
+    .navigation{
+        flex-direction: column;
+    }
+
+    .navigation a{
+        width: 100%;
+        text-align: center;
+    }
+
+    .navigation .btnlogin-popup{
+        width: 100%;
+    }
+
+    #text{
+        padding: 0 10px;
+    }
+
+    .sec{
+        padding: 40px 5%;
+    }
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+.footer{
+    background: #01221b;
+
+    color: white;
+
+    padding: 70px 8% 20px;
+}
+
+/* CONTENEDOR */
+
+.footer-container{
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 60px;
+
+    flex-wrap: wrap;
+}
+
+/* MARCA */
+
+.footer-brand{
+    flex: 1;
+
+    min-width: 250px;
+}
+
+.footer-logo{
+    width: 140px;
+
+    margin-bottom: 20px;
+
+    filter: drop-shadow(
+        0 0 12px rgba(255,255,255,0.25)
+    );
+}
+
+.footer-brand p{
+    color: #cfcfcf;
+
+    line-height: 1.8;
+
+    max-width: 350px;
+}
+
+/* LINKS */
+
+.footer-links{
+    flex: 2;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    gap: 40px;
+
+    flex-wrap: wrap;
+}
+
+.footer-column{
+    display: flex;
+
+    flex-direction: column;
+
+    min-width: 180px;
+}
+
+.footer-column h3{
+    margin-bottom: 20px;
+
+    font-size: 1.1rem;
+
+    color: white;
+}
+
+.footer-column a{
+    text-decoration: none;
+
+    color: #cfcfcf;
+
+    margin-bottom: 12px;
+
+    transition: 0.3s;
+}
+
+.footer-column a:hover{
+    color: #359381;
+
+    transform: translateX(5px);
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+    margin-top: 50px;
+
+    padding-top: 20px;
+
+    border-top: 1px solid rgba(255,255,255,0.1);
+
+    text-align: center;
+}
+
+.footer-bottom p{
+    color: #a5a5a5;
+
+    font-size: 0.9rem;
+}
+
+/* =========================
+   MODO CLARO/OSCURO
+========================= */
+
+/* Colores por defecto (Modo Claro) */
+:root {
+    --bg-color: #ffffff;
+    --text-color: #01221b;
+}
+
+/* Colores para el Modo Oscuro */
+body.dark-mode {
+    --bg-color: #06201a;
+    --text-color: #e6f4f1;
+}
+
+/* Aplicamos las variables */
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s; /* Animación suave */
+}
+/* Estilo básico del botón */
+.btn-toggle {
+    cursor: pointer;
+    background: #757575;
+    border: 2px solid #757575;
+    padding: 8px 15px;
+    border-radius: 10px 0px 0px 10px;
+    font-weight: 600;
+    transition: 0.3s;
+    text-decoration: none;
+    color: #359381;
+}
+
+.btn-toggle:hover {
+    background: #757575;
+    color: white;
+}
+
+/* Lógica de los iconos: Por defecto se ve el Sol */
+.btn-toggle .moon { display: none; }
+.btn-toggle .sun { display: inline; }
+
+/* Cuando el modo oscuro está activo, se ve la Luna */
+body.dark-mode .btn-toggle .moon { display: inline; }
+body.dark-mode .btn-toggle .sun { display: none; }
+
+/* Aseguramos que ambos tengan el mismo tamaño */
+.logo {
+    width: 140px;
+    max-width: 100%;
+    pointer-events: none;
+    transition: opacity 0.3s ease; /* Transición suave al cambiar */
+}
+
+/* Lógica de cambio */
+.logo.logo-dark { display: none; } /* Oculto en modo claro */
+
+/* Cuando el modo oscuro está activo */
+body.dark-mode .logo.logo-light { display: none; } /* Ocultamos el claro */
+body.dark-mode .logo.logo-dark { display: block; }  /* Mostramos el oscuro */
+
+.btn-toggle {
+    position: fixed;
+    top: 30%;
+    right: 0; 
+    transform: translateY(-50%); 
+    z-index: 1000; 
+}
+/* =========================
+   CONTACTO
+========================= */
+
+.contacto-section{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 80px 8% 90px;
+    background: #f9f9f9;
+}
+
+.contacto-info{
+    flex: 1;
+    min-width: 260px;
+}
+
+.contacto-info h2{
+    color: #163832;
+    font-size: clamp(1.8rem, 4vw, 2.6rem);
+    margin-bottom: 16px;
+}
+
+.contacto-info p{
+    color: #555;
+    line-height: 1.7;
+    margin-bottom: 30px;
+    max-width: 420px;
+}
+
+.info-item{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 16px;
+    color: #163832;
+    font-weight: 500;
+}
+
+.info-icon{
+    font-size: 1.3rem;
+}
+
+.contacto-form{
+    flex: 1;
+    min-width: 280px;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 35px 30px;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+}
+
+.contacto-form input,
+.contacto-form textarea{
+    background-color: #eee;
+    border: none;
+    margin: 8px 0;
+    padding: 12px 15px;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+    resize: vertical;
+}
+
+.contacto-form button{
+    background-color: #359381;
+    color: #fff;
+    font-size: 13px;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 8px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-top: 10px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contacto-form button:hover{
+    background-color: #235347;
+}
+
+.form-message{
+    font-size: 13px;
+    margin: 6px 0;
+    min-height: 16px;
+}
+
+.form-message.error{
+    color: #d93025;
+}
+
+.form-message.success{
+    color: #188038;
+}
+
+@media (max-width: 768px){
+
+    .contacto-section{
+        padding: 55px 6% 60px;
+        flex-direction: column;
+    }
+}
