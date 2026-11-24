@@ -1,13 +1,7 @@
-# =============================================================================
-# COWFARM — .gitignore unificado (backend + frontend)
-# =============================================================================
-
-# --- Entorno (contiene secretos: SECRET_KEY, SMTP_PASSWORD, contraseñas) ---
 .env
 .env.local
 .env.*.local
 
-# --- Python (backend) ---
 __pycache__/
 *.py[cod]
 *$py.class
@@ -17,20 +11,14 @@ venv/
 .mypy_cache/
 *.egg-info/
 
-# --- Node (frontend) ---
 node_modules/
 dist/
 dist-ssr
 .vite/
 *.local
 
-# --- Uploads generados en tiempo de ejecución ---
-# Las imágenes que sube el usuario (productos) no se versionan.
-# Las imágenes de categorías que ya trae el proyecto SÍ se versionan,
-# porque la base de datos las referencia por su ruta (/uploads/categorias/...).
 backend/uploads/productos/
 
-# --- Logs ---
 logs
 *.log
 npm-debug.log*
@@ -39,7 +27,7 @@ yarn-error.log*
 pnpm-debug.log*
 lerna-debug.log*
 
-# --- Editor / sistema operativo ---
+
 .vscode/*
 !.vscode/extensions.json
 .idea
